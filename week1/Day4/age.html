@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Voter Eligibility Check</title>
+  </head>
+  <body>
+    <script>
+      // Create label and input
+      let label = document.createElement("label");
+      label.innerText = "Enter your age: ";
+      document.body.appendChild(label);
+
+      let ageInput = document.createElement("input");
+      ageInput.type = "number";
+      document.body.appendChild(ageInput);
+
+      let btn = document.createElement("button");
+      btn.innerText = "Check Eligibility";
+      document.body.appendChild(btn);
+
+      let msg = document.createElement("p");
+      document.body.appendChild(msg);
+
+      // Arrow function to check voter eligibility
+      let checkEligibility = () => {
+        let age = parseInt(ageInput.value);
+        if (isNaN(age)) {
+          msg.innerText = " Please enter your age!";
+        } else if (age > 18) {
+          msg.innerText = " You are eligible to vote!";
+        } else {
+          msg.innerText = " You are not eligible to vote.";
+        }
+      };
+
+      btn.onclick = checkEligibility;
+    </script>
+  </body>
+</html>

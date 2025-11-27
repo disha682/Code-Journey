@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Interactive Buttons (JS Only)</title>
+  </head>
+  <body>
+    <script>
+      // ---- Create Text ----
+      const text = document.createElement("p");
+      text.innerText = "This is a sample text. Try the buttons below!";
+      text.style.fontSize = "20px";
+      text.style.fontFamily = "Arial";
+      text.style.margin = "20px";
+      document.body.appendChild(text);
+
+      // Function to create button easily
+      function createButton(label, color, action) {
+        const btn = document.createElement("button");
+        btn.innerText = label;
+        btn.style.backgroundColor = color;
+        btn.style.color = "white";
+        btn.style.margin = "5px";
+        btn.style.padding = "8px 12px";
+        btn.onclick = action;
+        document.body.appendChild(btn);
+      }
+
+      // Color buttons
+      createButton("RED", "red", () => text.style.color = "red");
+      createButton("GREEN", "green", () => text.style.color = "green");
+      createButton("BLUE", "blue", () => text.style.color = "blue");
+
+      document.body.appendChild(document.createElement("br"));
+
+      // ---- Font Family Dropdown ----
+      const select = document.createElement("select");
+      const fonts = ["Arial", "Georgia", "Courier New", "Verdana"];
+      fonts.forEach(f => {
+        const opt = document.createElement("option");
+        opt.value = f;
+        opt.text = f;
+        select.appendChild(opt);
+      });
+      select.onchange = () => text.style.fontFamily = select.value;
+      select.style.margin = "10px";
+      document.body.appendChild(select);
+
+      document.body.appendChild(document.createElement("br"));
+
+      // ---- Font Size Buttons ----
+      const increase = document.createElement("button");
+      increase.innerText = "A+";
+      increase.onclick = () => {
+        let size = parseInt(window.getComputedStyle(text).fontSize);
+        text.style.fontSize = (size + 2) + "px";
+      };
+      document.body.appendChild(increase);
+
+      const decrease = document.createElement("button");
+      decrease.innerText = "A-";
+      decrease.onclick = () => {
+        let size = parseInt(window.getComputedStyle(text).fontSize);
+        text.style.fontSize = (size - 2) + "px";
+      };
+      document.body.appendChild(decrease);
+
+      document.body.appendChild(document.createElement("br"));
+
+      // ---- Mouseover Style Buttons ----
+      function styleButton(label, mouseOverFunc) {
+        const btn = document.createElement("button");
+        btn.innerText = label;
+        btn.onmouseover = mouseOverFunc;
+        btn.onmouseout = () => {
+          text.style.fontWeight = "normal";
+          text.style.fontStyle = "normal";
+          text.style.textDecoration = "none";
+        };
+        document.body.appendChild(btn);
+      }
+
+      styleButton("Bold", () => text.style.fontWeight = "bold");
+      styleButton("Italic", () => text.style.fontStyle = "italic");
+      styleButton("Underline", () => text.style.textDecoration = "underline");
+    </script>
+  </body>
+</html>

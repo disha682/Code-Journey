@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Welcome Message</title>
+  </head>
+  <body>
+    <script>
+      // Ask user for their name
+      let name = prompt("Enter your name:");
+
+      // Create a paragraph element
+      let message = document.createElement("h2");
+
+      // Display dynamic welcome text
+      message.innerText = "Welcome, " + name + "!";
+
+      // Add to page
+      document.body.appendChild(message);
+    </script>
+  </body>
+</html>
