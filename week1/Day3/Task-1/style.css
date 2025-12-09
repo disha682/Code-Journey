@@ -1,0 +1,69 @@
+/* Global Style */
+body {
+    margin: 0;
+    padding: 40px 20px;
+    font-family: Poppins, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+    text-align: center;
+}
+
+/* Title */
+.title {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Flex Container */
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+/* Boxes */
+.box {
+    flex: 1;
+    min-width: 260px;
+    padding: 40px 20px;
+    border-radius: 18px;
+    color: white;
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s forwards;
+}
+
+/* Delay animations */
+.box1 { background: #42a5f5; animation-delay: 0.1s; }
+.box2 { background: #66bb6a; animation-delay: 0.2s; }
+.box3 { background: #ff7043; animation-delay: 0.3s; }
+
+/* Hover Effect */
+.box:hover {
+    transform: translateY(-8px) scale(1.03);
+    transition: 0.3s ease;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .box {
+        min-width: 100%;
+    }
+}

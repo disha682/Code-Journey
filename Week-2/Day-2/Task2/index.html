@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Total Expense Calculator</title>
+</head>
+<body>
+
+    <h2>Open Console to See Total Expense</h2>
+
+    <script>
+        // Expenses array
+        const expenses = [
+            { category: "Food", amount: 300 },
+            { category: "Transport", amount: 150 },
+            { category: "Shopping", amount: 400 },
+        ];
+
+        // Calculate total expense using reduce
+        const totalExpense = expenses.reduce((total, item) => total + item.amount, 0);
+
+        // Log output to console
+        console.log(`Total Expense: ₹${totalExpense}`);
+    </script>
+
+</body>
+</html>

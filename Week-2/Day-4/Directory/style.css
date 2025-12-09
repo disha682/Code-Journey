@@ -1,0 +1,104 @@
+/* -------- Global Styles -------- */
+body {
+    font-family: Poppins, sans-serif;
+    background: #eef2f7;
+    padding: 20px 40px;
+    margin: 0;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+/* Top Bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#darkModeBtn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#darkModeBtn:hover {
+    background: #555;
+}
+
+/* Refresh Button */
+.refresh-btn {
+    display: block;
+    margin: 0 auto 25px;
+    padding: 12px 25px;
+    border: none;
+    background: #4a90e2;
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.refresh-btn:hover {
+    background: #3575c5;
+}
+
+/* User Grid */
+.users {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+/* User Card */
+.user-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.4s, background 0.3s, color 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Dark Mode Cards */
+body.dark .user-card {
+    background: #1e1e1e;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.08);
+}
+
+/* Hover Animation */
+.user-card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+/* User Image */
+.user-card img {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+    border: 3px solid #4a90e2;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

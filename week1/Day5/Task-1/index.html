@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Text Controls</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1 id="text">This is Editable Text</h1>
+
+    <div class="controls">
+
+        <!-- Text Color -->
+        <div class="section">
+            <h3>Change Text Color</h3>
+            <button class="btn red" onclick="changeColor('red')">Red</button>
+            <button class="btn green" onclick="changeColor('green')">Green</button>
+            <button class="btn blue" onclick="changeColor('blue')">Blue</button>
+        </div>
+
+        <!-- Font Family -->
+        <div class="section">
+            <h3>Select Font Family</h3>
+            <select id="fontSelect" onchange="changeFont()">
+                <option value="Poppins">Poppins</option>
+                <option value="Arial">Arial</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+        </div>
+
+        <!-- Font Size -->
+        <div class="section">
+            <h3>Font Size</h3>
+            <button class="btn" onclick="increaseSize()">A+</button>
+            <button class="btn" onclick="decreaseSize()">A-</button>
+        </div>
+
+        <!-- Font Style -->
+        <div class="section">
+            <h3>Font Style on Hover</h3>
+            <button id="boldBtn" class="btn hover-btn">Bold</button>
+            <button id="italicBtn" class="btn hover-btn">Italic</button>
+            <button id="underlineBtn" class="btn hover-btn">Underline</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

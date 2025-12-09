@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Weather Fetcher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<button id="darkToggle" class="dark-btn">🌙 Dark Mode</button>
+
+<div class="container">
+    <h2 class="title">🌦 Live Weather Fetcher</h2>
+
+    <div id="spinner" class="spinner hidden"></div>
+
+    <div id="weatherOutput" class="output">Fetching live weather...</div>
+
+    <div id="iconBox" class="icon"></div>
+
+    <button class="btn" onclick="getWeather()">Refresh Weather</button>
+
+    <p class="auto">Auto refresh every 10 seconds ⏳</p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

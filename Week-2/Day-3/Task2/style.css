@@ -1,0 +1,41 @@
+body {
+    font-family: Poppins, sans-serif;
+    background: #eef2ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    width: 350px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.output {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f2f4ff;
+    border-radius: 8px;
+    font-weight: 600;
+    min-height: 40px;
+}
+
+.btn {
+    margin-top: 15px;
+    background: #4a5cff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #3a4bdd;
+}

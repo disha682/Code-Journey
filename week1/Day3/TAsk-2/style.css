@@ -1,0 +1,129 @@
+/* ROOT COLORS */
+:root {
+    --bg: #ffffff;
+    --text: #222;
+    --card-bg: #f5f5f5;
+}
+
+body.dark {
+    --bg: #121212;
+    --text: #ffffff;
+    --card-bg: #1f1f1f;
+}
+
+/* GLOBAL */
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Poppins, sans-serif;
+    transition: 0.3s;
+}
+
+/* HEADER */
+header {
+    padding: 15px 25px;
+    background: var(--card-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    font-weight: 600;
+    z-index: 50;
+}
+
+#darkToggle {
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 22px;
+}
+
+/* GALLERY GRID */
+.gallery {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* CARD */
+.photo-card {
+    overflow: hidden;
+    border-radius: 15px;
+    background: var(--card-bg);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+    animation: slideUp 0.7s ease forwards;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.photo-card:hover {
+    transform: scale(1.05);
+}
+
+.photo-card:hover img {
+    transform: scale(1.15);
+}
+
+/* POPUP VIEWER */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.popup img {
+    width: 60%;
+    max-width: 600px;
+    border-radius: 12px;
+    animation: zoom 0.4s ease;
+}
+
+.close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: var(--card-bg);
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoom {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

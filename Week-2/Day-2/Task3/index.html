@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map Filter Reduce</title>
+</head>
+<body>
+
+
+<script>
+    const scores = [45, 80, 90, 35, 60, 75];
+
+    // 1. Filter passing scores (>=50)
+    const passingScores = scores.filter(score => score >= 50);
+
+    // 2. Add 10 bonus marks
+    const bonusScores = passingScores.map(score => score + 10);
+
+    // 3. Calculate total using reduce()
+    const totalScore = bonusScores.reduce((sum, value) => sum + value, 0);
+
+    // Console output
+    console.log("Passing Scores:", passingScores);
+    console.log("After Bonus:", bonusScores);
+    console.log("Total Score:", totalScore);
+
+    
+</script>
+
+</body>
+</html>
