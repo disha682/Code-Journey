@@ -35,7 +35,7 @@ darkModeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
 
     darkModeBtn.textContent =
-        document.body.classList.contains("dark") ? "☀️ Light Mode" : "🌙 Dark Mode";
+        document.body.classList.contains("dark") ? " Light Mode" : " Dark Mode";
 });
 
 // Load initial users

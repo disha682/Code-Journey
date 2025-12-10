@@ -3,54 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Text Controls</title>
+    <title>Interactive Buttons – Neon UI</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="light">
 
-<div class="container">
+    <!-- Theme Switcher -->
+    <div class="theme-switch">
+        <button id="lightBtn"> Light</button>
+        <button id="darkBtn"> Dark</button>
+    </div>
 
-    <h1 id="text">This is Editable Text</h1>
+    <div class="container">
 
-    <div class="controls">
+        <h1 class="glow-title"> Interactive Text Controller </h1>
 
-        <!-- Text Color -->
+        <p id="text">This is sample text. Customize me! </p>
+
+        <!-- Color Buttons -->
         <div class="section">
-            <h3>Change Text Color</h3>
-            <button class="btn red" onclick="changeColor('red')">Red</button>
-            <button class="btn green" onclick="changeColor('green')">Green</button>
-            <button class="btn blue" onclick="changeColor('blue')">Blue</button>
+            <h3>🎨 Change Text Color</h3>
+            <button class="btn color" onclick="changeColor('red')">🔴 Red</button>
+            <button class="btn color" onclick="changeColor('green')">🟢 Green</button>
+            <button class="btn color" onclick="changeColor('blue')">🔵 Blue</button>
         </div>
 
         <!-- Font Family -->
         <div class="section">
-            <h3>Select Font Family</h3>
-            <select id="fontSelect" onchange="changeFont()">
+            <h3> Change Font Family</h3>
+            <select id="fontSelect" onchange="changeFontFamily()" class="dropdown">
                 <option value="Poppins">Poppins</option>
-                <option value="Arial">Arial</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Courier New">Courier New</option>
+                <option value="serif">Serif</option>
+                <option value="monospace">Monospace</option>
             </select>
         </div>
 
         <!-- Font Size -->
         <div class="section">
             <h3>Font Size</h3>
-            <button class="btn" onclick="increaseSize()">A+</button>
-            <button class="btn" onclick="decreaseSize()">A-</button>
+            <button class="btn" onclick="changeSize(1)">A➕</button>
+            <button class="btn" onclick="changeSize(-1)">A➖</button>
         </div>
 
         <!-- Font Style -->
         <div class="section">
-            <h3>Font Style on Hover</h3>
-            <button id="boldBtn" class="btn hover-btn">Bold</button>
-            <button id="italicBtn" class="btn hover-btn">Italic</button>
-            <button id="underlineBtn" class="btn hover-btn">Underline</button>
+            <h3>Font Style (Mouseover)</h3>
+            <button class="btn hover-btn" onmouseover="makeBold()">Bold</button>
+            <button class="btn hover-btn" onmouseover="makeItalic()">Italic</button>
+            <button class="btn hover-btn" onmouseover="makeUnderline()">Underline</button>
         </div>
 
     </div>
-</div>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

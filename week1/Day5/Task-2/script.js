@@ -1,43 +1,47 @@
-function calculate(operation) {
-    const num1 = document.getElementById("num1").value.trim();
-    const num2 = document.getElementById("num2").value.trim();
-    const alertMsg = document.getElementById("alertMsg");
-    const result = document.getElementById("result");
+// THEME SWITCHER
+document.getElementById("lightBtn").onclick = () => {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+};
 
-    // Clear previous messages
-    alertMsg.textContent = "";
-    result.textContent = "";
+document.getElementById("darkBtn").onclick = () => {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+};
 
-    // Validation
-    if (num1 === "" || num2 === "") {
-        alertMsg.textContent = "Please enter both numbers!";
+function calculate(type) {
+    let n1 = document.getElementById("num1").value;
+    let n2 = document.getElementById("num2").value;
+    let error = document.getElementById("error");
+    let resultBox = document.getElementById("result");
+
+    if (n1 === "" || n2 === "") {
+        error.innerText = "❌ Both fields are required!";
+        resultBox.innerText = "Result: --";
         return;
+    } else {
+        error.innerText = "";
     }
 
-    const number1 = parseFloat(num1);
-    const number2 = parseFloat(num2);
-    let res;
+    n1 = Number(n1);
+    n2 = Number(n2);
 
-    switch(operation) {
-        case 'add':
-            res = number1 + number2;
+    let result;
+
+    switch (type) {
+        case "add":
+            result = n1 + n2;
             break;
-        case 'subtract':
-            res = number1 - number2;
+        case "sub":
+            result = n1 - n2;
             break;
-        case 'multiply':
-            res = number1 * number2;
+        case "mul":
+            result = n1 * n2;
             break;
-        case 'divide':
-            if(number2 === 0){
-                alertMsg.textContent = "Cannot divide by zero!";
-                return;
-            }
-            res = number1 / number2;
+        case "div":
+            result = n1 / n2;
             break;
-        default:
-            res = "Invalid Operation";
     }
 
-    result.textContent = `Result: ${res}`;
+    resultBox.innerText = "Result: " + result;
 }

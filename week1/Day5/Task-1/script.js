@@ -1,36 +1,34 @@
-let text = document.getElementById("text");
-let fontSize = 24;
-text.style.fontSize = fontSize + "px";
+const text = document.getElementById("text");
 
-// Change color
+/* THEME SWITCH */
+document.getElementById("lightBtn").onclick = () => {
+    document.body.className = "light";
+};
+
+document.getElementById("darkBtn").onclick = () => {
+    document.body.className = "dark";
+};
+
+/* COLOR CHANGE */
 function changeColor(color) {
     text.style.color = color;
 }
 
-// Change font family
-function changeFont() {
-    let selectedFont = document.getElementById("fontSelect").value;
-    text.style.fontFamily = selectedFont;
+/* FONT FAMILY */
+function changeFontFamily() {
+    let font = document.getElementById("fontSelect").value;
+    text.style.fontFamily = font;
 }
 
-// Increase font size
-function increaseSize() {
-    fontSize += 2;
-    text.style.fontSize = fontSize + "px";
+/* FONT SIZE */
+let size = 22;
+
+function changeSize(val) {
+    size += val;
+    text.style.fontSize = size + "px";
 }
 
-// Decrease font size
-function decreaseSize() {
-    fontSize -= 2;
-    text.style.fontSize = fontSize + "px";
-}
-
-// Font Style Hover Effects
-document.getElementById("boldBtn").onmouseover = () => text.style.fontWeight = "bold";
-document.getElementById("boldBtn").onmouseout = () => text.style.fontWeight = "normal";
-
-document.getElementById("italicBtn").onmouseover = () => text.style.fontStyle = "italic";
-document.getElementById("italicBtn").onmouseout = () => text.style.fontStyle = "normal";
-
-document.getElementById("underlineBtn").onmouseover = () => text.style.textDecoration = "underline";
-document.getElementById("underlineBtn").onmouseout = () => text.style.textDecoration = "none";
+/* FONT STYLES */
+function makeBold() { text.style.fontWeight = "bold"; }
+function makeItalic() { text.style.fontStyle = "italic"; }
+function makeUnderline() { text.style.textDecoration = "underline"; }

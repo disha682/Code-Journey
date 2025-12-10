@@ -1,68 +1,117 @@
 body {
+    margin: 0;
+    padding: 0;
     font-family: Poppins, sans-serif;
-    background: linear-gradient(135deg,#6a11cb,#2575fc);
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-    color: #333;
+    transition: 0.5s;
 }
 
+/* LIGHT & DARK THEME */
+body.light {
+    background: #f2f2f2;
+    color: #111;
+}
+
+body.dark {
+    background: #090f26;
+    color: #fff;
+}
+
+/* CONTAINER */
 .container {
-    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
     padding: 25px;
-    border-radius: 15px;
-    width: 500px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.2);
     text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* GLOW HEADING */
+.glow-title {
+    font-size: 32px;
+    text-shadow: 0 0 10px cyan, 0 0 20px cyan;
+}
+
+/* TEXT */
+#text {
+    font-size: 22px;
+    margin: 20px 0;
     transition: 0.3s;
 }
 
-h1#text {
-    font-size: 24px;
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
+/* SECTION TITLE */
+.section h3 {
+    margin-bottom: 10px;
 }
 
-.controls .section {
-    margin-bottom: 20px;
-}
-
-h3 {
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-/* Buttons */
+/* NEON BUTTON */
 .btn {
-    padding: 8px 15px;
-    margin: 5px;
+    padding: 12px 25px;
+    margin: 10px;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
+    background: #141414;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0 0 10px cyan, inset 0 0 10px cyan;
     cursor: pointer;
-    transition: 0.3s;
-    background: #ddd;
+    transition: 0.25s;
 }
 
-.btn:hover {
-    transform: scale(1.1);
+/* 3D Press Animation */
+.btn:active {
+    transform: scale(0.9);
+    box-shadow: 0 0 25px lime, inset 0 0 25px lime;
 }
 
 /* Color Buttons */
-.red { background: #ff6b6b; color: #fff; }
-.green { background: #4cd137; color: #fff; }
-.blue { background: #3498db; color: #fff; }
-
-/* Hover font style buttons */
-.hover-btn { background: #b2bec3; color: #fff; }
-
-select {
-    padding: 8px 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-    transition: 0.3s;
+.color {
+    background: #222;
 }
 
-select:hover {
-    border-color: #3498db;
+/* DROPDOWN */
+.dropdown {
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    width: 200px;
+    cursor: pointer;
+    background: #111;
+    color: white;
+    box-shadow: 0 0 8px cyan;
+}
+
+/* THEME BUTTONS */
+.theme-switch {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.theme-switch button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 10px #aaa;
+    transition: 0.2s;
+}
+
+.theme-switch button:hover {
+    transform: scale(1.1);
+}
+
+/* Fade Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

@@ -8,7 +8,7 @@ const iconBox = document.getElementById("iconBox");
 
 // WEATHER ICONS (you can replace with your own files)
 function getWeatherIcon(code) {
-    if (code >= 0 && code < 2) return "icon/sunny.png";
+    if (code >= 0 && code < 2) return "icons/sunny.png";
     if (code >= 2 && code <= 3) return "icons/cloudy.png";
     if (code >= 51) return "icons/rain.png";
     return "icons/wind.png";
@@ -33,7 +33,7 @@ async function getWeather() {
         `;
 
         const iconPath = getWeatherIcon(w.weathercode);
-        iconBox.innerHTML = `<img src="${iconPath}" alt="weather icon">`;
+      
 
         console.log("Weather Data:", w);
 
