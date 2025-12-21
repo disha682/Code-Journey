@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Greeting from "./components/Greeting";
+import ProfileCard from "./components/ProfileCard";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* Header */}
+      <Header />
+
+      {/* Greetings */}
+      <Greeting name="Priya" topic="React Components" />
+      <Greeting name="Rohan" topic="JSX & Props" />
+
+      {/* Profile Cards */}
+      <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap" }}>
+        <ProfileCard
+          name="Arjun Kumar"
+          role="Frontend Developer"
+          image="https://randomuser.me/api/portraits/men/32.jpg"
+        />
+        <ProfileCard
+          name="Sneha Verma"
+          role="UI/UX Designer"
+          image="https://randomuser.me/api/portraits/women/44.jpg"
+        />
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
